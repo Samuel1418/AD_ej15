@@ -26,19 +26,16 @@ public class Exercicio15 {
         XMLInputFactory imput = XMLInputFactory.newInstance();
         XMLStreamReader leer = imput.createXMLStreamReader(new FileReader("/home/oracle/Desktop/ProbaExer4/autores.xml"));
         
-        System.out.println(leer.getVersion());
+       
         
       while (leer.hasNext()) {
            leer.next();
            
-           if (leer.getEventType() == XMLStreamReader.START_ELEMENT) {
-            System.out.println(leer.getLocalName());
-            
-           }
+           
            if (leer.getEventType() == XMLStreamReader.START_ELEMENT) {  //No hacia falta que se leyesen los atributos, esto sobra
             String lectura=leer.getAttributeLocalName(0);
             if(lectura!= null)
-            System.out.println(lectura+"= "+leer.getAttributeValue(0));         
+            System.out.println(leer.getAttributeValue(0));         
            }
            
            
